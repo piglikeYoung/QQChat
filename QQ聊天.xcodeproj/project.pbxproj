@@ -14,6 +14,10 @@
 		7DBF19DB1AA6C69700DEF150 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DBF19DA1AA6C69700DEF150 /* Images.xcassets */; };
 		7DBF19DE1AA6C69700DEF150 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DBF19DC1AA6C69700DEF150 /* LaunchScreen.xib */; };
 		7DBF19EA1AA6C69700DEF150 /* QQ__Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF19E91AA6C69700DEF150 /* QQ__Tests.m */; };
+		7DBF19F41AA6C87A00DEF150 /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DBF19F31AA6C87A00DEF150 /* messages.plist */; };
+		7DBF19F81AA6D34600DEF150 /* JHMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF19F71AA6D34600DEF150 /* JHMessageModel.m */; };
+		7DBF19FB1AA6D46E00DEF150 /* JHMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF19FA1AA6D46E00DEF150 /* JHMessageCell.m */; };
+		7DBF19FE1AA6D4B700DEF150 /* JHMessageFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF19FD1AA6D4B700DEF150 /* JHMessageFrameModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,14 @@
 		7DBF19E31AA6C69700DEF150 /* QQ聊天Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "QQ聊天Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DBF19E81AA6C69700DEF150 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DBF19E91AA6C69700DEF150 /* QQ__Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QQ__Tests.m; sourceTree = "<group>"; };
+		7DBF19F31AA6C87A00DEF150 /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
+		7DBF19F51AA6D2C300DEF150 /* JHGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHGlobal.h; sourceTree = "<group>"; };
+		7DBF19F61AA6D34600DEF150 /* JHMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMessageModel.h; sourceTree = "<group>"; };
+		7DBF19F71AA6D34600DEF150 /* JHMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMessageModel.m; sourceTree = "<group>"; };
+		7DBF19F91AA6D46E00DEF150 /* JHMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMessageCell.h; sourceTree = "<group>"; };
+		7DBF19FA1AA6D46E00DEF150 /* JHMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMessageCell.m; sourceTree = "<group>"; };
+		7DBF19FC1AA6D4B700DEF150 /* JHMessageFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMessageFrameModel.h; sourceTree = "<group>"; };
+		7DBF19FD1AA6D4B700DEF150 /* JHMessageFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMessageFrameModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +93,7 @@
 		7DBF19CC1AA6C69700DEF150 /* QQ聊天 */ = {
 			isa = PBXGroup;
 			children = (
-				7DBF19D11AA6C69700DEF150 /* AppDelegate.h */,
-				7DBF19D21AA6C69700DEF150 /* AppDelegate.m */,
-				7DBF19D41AA6C69700DEF150 /* ViewController.h */,
-				7DBF19D51AA6C69700DEF150 /* ViewController.m */,
-				7DBF19D71AA6C69700DEF150 /* Main.storyboard */,
-				7DBF19DA1AA6C69700DEF150 /* Images.xcassets */,
-				7DBF19DC1AA6C69700DEF150 /* LaunchScreen.xib */,
+				7DBF1A031AA6EBB500DEF150 /* Classes */,
 				7DBF19CD1AA6C69700DEF150 /* Supporting Files */,
 			);
 			path = "QQ聊天";
@@ -96,6 +102,8 @@
 		7DBF19CD1AA6C69700DEF150 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7DBF19DA1AA6C69700DEF150 /* Images.xcassets */,
+				7DBF19F31AA6C87A00DEF150 /* messages.plist */,
 				7DBF19CE1AA6C69700DEF150 /* Info.plist */,
 				7DBF19CF1AA6C69700DEF150 /* main.m */,
 			);
@@ -117,6 +125,58 @@
 				7DBF19E81AA6C69700DEF150 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7DBF19FF1AA6EB1E00DEF150 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				7DBF19F51AA6D2C300DEF150 /* JHGlobal.h */,
+				7DBF19D11AA6C69700DEF150 /* AppDelegate.h */,
+				7DBF19D21AA6C69700DEF150 /* AppDelegate.m */,
+			);
+			name = Other;
+			sourceTree = "<group>";
+		};
+		7DBF1A001AA6EB2B00DEF150 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7DBF19DC1AA6C69700DEF150 /* LaunchScreen.xib */,
+				7DBF19D71AA6C69700DEF150 /* Main.storyboard */,
+				7DBF19D41AA6C69700DEF150 /* ViewController.h */,
+				7DBF19D51AA6C69700DEF150 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7DBF1A011AA6EB4000DEF150 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7DBF19F91AA6D46E00DEF150 /* JHMessageCell.h */,
+				7DBF19FA1AA6D46E00DEF150 /* JHMessageCell.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		7DBF1A021AA6EB4900DEF150 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7DBF19F61AA6D34600DEF150 /* JHMessageModel.h */,
+				7DBF19F71AA6D34600DEF150 /* JHMessageModel.m */,
+				7DBF19FC1AA6D4B700DEF150 /* JHMessageFrameModel.h */,
+				7DBF19FD1AA6D4B700DEF150 /* JHMessageFrameModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7DBF1A031AA6EBB500DEF150 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7DBF1A021AA6EB4900DEF150 /* Model */,
+				7DBF1A011AA6EB4000DEF150 /* View */,
+				7DBF1A001AA6EB2B00DEF150 /* Controller */,
+				7DBF19FF1AA6EB1E00DEF150 /* Other */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DBF19F41AA6C87A00DEF150 /* messages.plist in Resources */,
 				7DBF19D91AA6C69700DEF150 /* Main.storyboard in Resources */,
 				7DBF19DE1AA6C69700DEF150 /* LaunchScreen.xib in Resources */,
 				7DBF19DB1AA6C69700DEF150 /* Images.xcassets in Resources */,
@@ -219,9 +280,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DBF19FB1AA6D46E00DEF150 /* JHMessageCell.m in Sources */,
+				7DBF19FE1AA6D4B700DEF150 /* JHMessageFrameModel.m in Sources */,
 				7DBF19D61AA6C69700DEF150 /* ViewController.m in Sources */,
 				7DBF19D31AA6C69700DEF150 /* AppDelegate.m in Sources */,
 				7DBF19D01AA6C69700DEF150 /* main.m in Sources */,
+				7DBF19F81AA6D34600DEF150 /* JHMessageModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

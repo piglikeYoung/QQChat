@@ -7,21 +7,51 @@
 //
 
 #import "ViewController.h"
+#import "JHMessageModel.h"
+#import "JHMessageCell.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDataSource>
+
+@property (strong , nonatomic) NSMutableArray *messages;
+
+@property (weak , nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+#pragma mark - 懒加载
+- (NSMutableArray *)messages
+{
+    if (_messages == nil) {
+        NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"messages.plist" ofType:nil];
+        NSArray *dictArray = [NSArray arrayWithContentsOfFile:fullPath];
+        NSMutableArray *models = [NSMutableArray arrayWithCapacity:dictArray.count];
+        for (NSDictionary *dict in dictArray) {
+            JHMessageModel *message = [JHMessageModel messageModelWithDict:dict];
+            [models addObject:message];
+        }
+        self.messages = [models copy];
+    }
+    return _messages;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UITableViewDataSource
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.messages.count;
+}
+
+-(UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // 1.创建cell
+    JHMessageCell *cell = [JHMessageCell cellWithTableView:tableView];
+    
+    // 2.设置数据
+    cell.message = self.messages[indexPath.row];
+    
+    // 3.返回cell
+    return cell;
 }
 
 @end
