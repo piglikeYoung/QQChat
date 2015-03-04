@@ -29,7 +29,7 @@
 {
     static NSString *identifier = @"message";
     JHMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    if (!cell) {
+    if (cell == nil) {
         cell = [[JHMessageCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     return cell;
@@ -72,6 +72,41 @@
     }
     
     return self;
+}
+
+-(void)setMessageFrame:(JHMessageFrameModel *)messageFrame
+{
+    _messageFrame = messageFrame;
+    
+    // 0.获取数据模型
+    JHMessageModel *message = messageFrame.message;
+    
+    // 1.设置时间
+    self.timeLabel.text = message.time;
+    self.timeLabel.frame = _messageFrame.timeF;
+    
+    // 2.设置头像
+    if (JHMessageModelTypeMe == message.type) {
+        // 自己
+        self.iconView.image = [UIImage imageNamed:@"me"];
+    }else{
+        self.iconView.image = [UIImage imageNamed:@"other"];
+    }
+    
+    self.iconView.frame = _messageFrame.iconF;
+    
+    // 3.设置正文
+    [self.contentBtn setTitle:message.text forState:UIControlStateNormal];
+    self.contentBtn.frame = _messageFrame.textF;
+    
+    // 4.设置背景图片
+    if (JHMessageModelTypeMe == message.type) {
+        // 自己发的
+        UIImage *norImage = [UIImage imageNamed:@"chat_send_nor"];
+        [self.contentBtn setBackgroundImage:norImage forState:UIControlStateNormal];
+    }else{
+        // 别人发的
+    }
 }
 
 @end

@@ -13,6 +13,8 @@
 
 +(instancetype) cellWithTableView:(UITableView *)tableView;
 
-@property (strong , nonatomic) JHMessageModel *message;
+//@property (strong , nonatomic) JHMessageModel *message;
+
+@property (strong , nonatomic) JHMessageFrameModel *messageFrame;
 
 @end

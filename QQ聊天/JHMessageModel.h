@@ -11,8 +11,8 @@
 
 typedef enum
 {
-    NJMessageModelTypeMe = 0,
-    NJMessageModelTypeOther
+    JHMessageModelTypeMe = 0,
+    JHMessageModelTypeOther
 }JHMessageModelType;
 
 @interface JHMessageModel : NSObject
