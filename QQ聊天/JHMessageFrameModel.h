@@ -23,18 +23,18 @@
 /**
  *  时间的frame
  */
-@property (nonatomic, assign) CGRect timeF;
+@property (nonatomic, assign, readonly) CGRect timeF;
 /**
  *  头像frame
  */
-@property (nonatomic, assign) CGRect iconF;
+@property (nonatomic, assign, readonly) CGRect iconF;
 /**
  *  正文frame
  */
-@property (nonatomic, assign) CGRect textF;
+@property (nonatomic, assign, readonly) CGRect textF;
 /**
  *  cell的高度
  */
-@property (nonatomic, assign) CGFloat cellHeight;
+@property (nonatomic, assign, readonly) CGFloat cellHeight;
 
 @end

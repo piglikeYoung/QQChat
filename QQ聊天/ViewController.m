@@ -18,6 +18,9 @@
 @property (weak , nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextField *inputTextField;
 
+/** 存放所有的自动回复数据 */
+@property (strong , nonatomic) NSDictionary *autoReplays;
+
 @end
 
 @implementation ViewController
@@ -96,11 +99,13 @@
 #pragma mark - UITextFieldDelegate
 - (BOOL) textFieldShouldReturn:(UITextField *)textField
 {
+    // 创建自己发送的消息
     [self addMessage:textField.text type:JHMessageModelTypeMe];
-    NSString *temp = [NSString stringWithFormat:@"%@你个蛋", textField.text];
     
-    // 去内存中加载进来的字典中查找有没有可用的回复信息
-    [self addMessage:temp type:JHMessageModelTypeOther];
+    // 创建别人发送的消息
+    NSString *result = [self autoReplayWithContent:textField.text];
+    
+    [self addMessage:result type:JHMessageModelTypeOther];
     
     // 2.刷新表格
     [self.tableView reloadData];
@@ -123,7 +128,17 @@
     JHMessageModel *previousMessage = (JHMessageModel *)[[self.messages lastObject] message];
     
     JHMessageModel *message = [[JHMessageModel alloc] init];
-    message.time = @"17:17";
+    // 实现把当前时间作为发送时间
+    NSDate *date = [NSDate date]; //创建时间对象
+    // 可以将时间转换为字符串
+    // 也可以将字符串转换为时间
+    // 2014-05-31
+    // 2014/05/31
+    // 05/31/2014
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    // HH 代表24小时 hh代表12小时
+    formatter.dateFormat = @"HH:mm";
+    message.time = [formatter stringFromDate:date];
     message.text = content;
     message.type = type;
     message.hiddenTime = [message.time isEqualToString:previousMessage.time];
@@ -135,7 +150,35 @@
     [self.messages addObject:mf];
 }
 
+-(NSString *)autoReplayWithContent:(NSString *)content
+{
+    // 取出用户输入的每一个字
+    NSString *result = nil;
+    for (int i = 0; i<content.length; i++) {
+        NSString *str = [content substringWithRange:NSMakeRange(i, 1)];
+        
+        result = self.autoReplays[str];
+        if (result != nil) {//代表找到了自动回复的内容
+            break;
+        }
+    }
+    
+    if (result == nil) {
+        result = [NSString stringWithFormat:@"%@你个蛋",content];
+    }
+    return result;
+}
+
 #pragma mark - 懒加载
+- (NSDictionary *)autoReplays
+{
+    if (_autoReplays == nil) {
+        NSString *fullPath = [[NSBundle mainBundle] pathForResource:@"autoReplay.plist" ofType:nil];
+        _autoReplays = [NSDictionary dictionaryWithContentsOfFile:fullPath];
+    }
+    return _autoReplays;
+}
+
 - (NSMutableArray *)messages
 {
     if (_messages == nil) {

@@ -20,6 +20,7 @@
 		7DBF19FE1AA6D4B700DEF150 /* JHMessageFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF19FD1AA6D4B700DEF150 /* JHMessageFrameModel.m */; };
 		7DC8A24A1AA81F22002DCA06 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC8A2491AA81F22002DCA06 /* NSString+Extension.m */; };
 		7DC8A24D1AA81FD8002DCA06 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC8A24C1AA81FD8002DCA06 /* UIImage+Extension.m */; };
+		7DC9388F1AAB16330083F877 /* autoReplay.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DC9388E1AAB16330083F877 /* autoReplay.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		7DC8A2491AA81F22002DCA06 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 		7DC8A24B1AA81FD8002DCA06 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
 		7DC8A24C1AA81FD8002DCA06 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		7DC9388E1AAB16330083F877 /* autoReplay.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = autoReplay.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		7DBF19CD1AA6C69700DEF150 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7DC9388E1AAB16330083F877 /* autoReplay.plist */,
 				7DBF19DA1AA6C69700DEF150 /* Images.xcassets */,
 				7DBF19F31AA6C87A00DEF150 /* messages.plist */,
 				7DBF19CE1AA6C69700DEF150 /* Info.plist */,
@@ -269,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DC9388F1AAB16330083F877 /* autoReplay.plist in Resources */,
 				7DBF19F41AA6C87A00DEF150 /* messages.plist in Resources */,
 				7DBF19D91AA6C69700DEF150 /* Main.storyboard in Resources */,
 				7DBF19DE1AA6C69700DEF150 /* LaunchScreen.xib in Resources */,
