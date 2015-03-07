@@ -30,6 +30,11 @@ typedef enum
  */
 @property (nonatomic, assign) JHMessageModelType type;
 
+/**
+ *  是否隐藏时间
+ */
+@property (nonatomic, assign) BOOL hiddenTime;
+
 JHInitH(messageModel)
 
 @end

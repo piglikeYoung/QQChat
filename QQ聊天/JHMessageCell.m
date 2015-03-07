@@ -9,6 +9,7 @@
 #import "JHMessageCell.h"
 #import "JHMessageFrameModel.h"
 #import "JHMessageModel.h"
+#import "UIImage+Extension.h"
 
 @interface JHMessageCell()
 
@@ -69,6 +70,9 @@
         
         // 4.清空cell的背景颜色
         self.backgroundColor = [UIColor clearColor];
+        
+        // 5.设置按钮的内边距
+        self.contentBtn.contentEdgeInsets = UIEdgeInsetsMake(JHEdgeInsetsWidth, JHEdgeInsetsWidth, JHEdgeInsetsWidth, JHEdgeInsetsWidth);
     }
     
     return self;
@@ -100,13 +104,16 @@
     self.contentBtn.frame = _messageFrame.textF;
     
     // 4.设置背景图片
+    UIImage *newImage = nil;
     if (JHMessageModelTypeMe == message.type) {
         // 自己发的
-        UIImage *norImage = [UIImage imageNamed:@"chat_send_nor"];
-        [self.contentBtn setBackgroundImage:norImage forState:UIControlStateNormal];
+        newImage = [UIImage resizableImageWithName:@"chat_send_nor"];
     }else{
         // 别人发的
+        newImage = [UIImage resizableImageWithName:@"chat_recive_nor"];
     }
+    
+    [self.contentBtn setBackgroundImage:newImage forState:UIControlStateNormal];
 }
 
 @end

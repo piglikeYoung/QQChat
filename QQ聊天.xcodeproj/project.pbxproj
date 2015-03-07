@@ -18,6 +18,8 @@
 		7DBF19F81AA6D34600DEF150 /* JHMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF19F71AA6D34600DEF150 /* JHMessageModel.m */; };
 		7DBF19FB1AA6D46E00DEF150 /* JHMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF19FA1AA6D46E00DEF150 /* JHMessageCell.m */; };
 		7DBF19FE1AA6D4B700DEF150 /* JHMessageFrameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DBF19FD1AA6D4B700DEF150 /* JHMessageFrameModel.m */; };
+		7DC8A24A1AA81F22002DCA06 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC8A2491AA81F22002DCA06 /* NSString+Extension.m */; };
+		7DC8A24D1AA81FD8002DCA06 /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC8A24C1AA81FD8002DCA06 /* UIImage+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,10 @@
 		7DBF19FA1AA6D46E00DEF150 /* JHMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMessageCell.m; sourceTree = "<group>"; };
 		7DBF19FC1AA6D4B700DEF150 /* JHMessageFrameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHMessageFrameModel.h; sourceTree = "<group>"; };
 		7DBF19FD1AA6D4B700DEF150 /* JHMessageFrameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHMessageFrameModel.m; sourceTree = "<group>"; };
+		7DC8A2481AA81F22002DCA06 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		7DC8A2491AA81F22002DCA06 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
+		7DC8A24B1AA81FD8002DCA06 /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		7DC8A24C1AA81FD8002DCA06 /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +139,10 @@
 				7DBF19F51AA6D2C300DEF150 /* JHGlobal.h */,
 				7DBF19D11AA6C69700DEF150 /* AppDelegate.h */,
 				7DBF19D21AA6C69700DEF150 /* AppDelegate.m */,
+				7DC8A2481AA81F22002DCA06 /* NSString+Extension.h */,
+				7DC8A2491AA81F22002DCA06 /* NSString+Extension.m */,
+				7DC8A24B1AA81FD8002DCA06 /* UIImage+Extension.h */,
+				7DC8A24C1AA81FD8002DCA06 /* UIImage+Extension.m */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -286,6 +296,8 @@
 				7DBF19D31AA6C69700DEF150 /* AppDelegate.m in Sources */,
 				7DBF19D01AA6C69700DEF150 /* main.m in Sources */,
 				7DBF19F81AA6D34600DEF150 /* JHMessageModel.m in Sources */,
+				7DC8A24A1AA81F22002DCA06 /* NSString+Extension.m in Sources */,
+				7DC8A24D1AA81FD8002DCA06 /* UIImage+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +488,7 @@
 				7DBF19EF1AA6C69700DEF150 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7DBF19F01AA6C69700DEF150 /* Build configuration list for PBXNativeTarget "QQ聊天Tests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +497,7 @@
 				7DBF19F21AA6C69700DEF150 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

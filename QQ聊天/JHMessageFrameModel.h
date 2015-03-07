@@ -12,6 +12,7 @@
 
 #define JHTextFont [UIFont systemFontOfSize:15]
 #define JHTimeFont [UIFont systemFontOfSize:13]
+#define JHEdgeInsetsWidth 20
 
 @interface JHMessageFrameModel : NSObject
 
